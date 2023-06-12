@@ -20,21 +20,21 @@ These amazing features were created by Samsung and all APKs and libs in this mod
 This module installs some big apps and libs. I suggest you to use Galaxy App Booster (Samsung official app of Good Guardians suite) after every big module update, so the tablet will not slow down. A "wipe cache" or "Repair apps" in Recovery may be useful in some cases. Moreover make sure all apps are up-to-date before/after installing this module (Play Store and Galaxy Store).
 
 ## Features Now:
-- ✅️ Object/Shadow/Reflection eraser
-- ✅️ Image Clipper (thanks to ShaDisNX255/NcX-S21FE/)
-- ✅️ Smart Suggestions and Widget
+- ✅ Object/Shadow/Reflection eraser
+- ✅ Image Clipper (thanks to ShaDisNX255/NcX-S21FE/)
+- ✅ Smart Suggestions and Widget
 - ✅ HighEnd animations
 - ✅ Camera Privacy toggle
-- ✅️ Google Discover feed
+- ✅ Google Discover feed
 - ✅ DeX wireless
 - ✅ OCR in Samsung Apps (Gallery, Camera, Capture and more)
-- ✅️ Samsung Tag Service
+- ✅ Samsung Tag Service
 - ✅ AR Emoji Features
 - ✅ Camera fun mode
 - ✅ Styles feature in Photo Editor
 
 ## To be added (I'm working on it):
-- ❌️ Photo remaster (full version)
+- ❌ Photo remaster (full version)
 - ❌ DeX on PC
 
 ## Maybe (I don't know how to enable these):
