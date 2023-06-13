@@ -11,6 +11,28 @@ else
     abort
 fi
 
+#Check space (Thanks to ChatGPT for making my script work with Android)
+#At the moment 2GB should be enough
+required_storage=2048
+
+# Get the output of df command and filter out the header using tail
+df_output=$(df /data -BM | tail -n +2)
+
+# Loop through each line of the df output
+while read -r line; do
+  # Extract the available storage value from each line
+  available_storage=$(echo "$line" | awk '{print $4}' | sed 's/[^0-9]//g')
+  avail_storage_gb=$(($available_storage / 1024))
+
+  # Check if available storage is greater than or equal to the required storage
+  if [ "$available_storage" -ge "$required_storage" ]; then
+    ui_print "There is enough storage available: $avail_storage_gb GB."
+  else
+    echo "Not enough space available: $avail_storage_gb GB."
+    abort
+  fi
+done <<< "$df_output"
+
 ui_print "- Extracting module files..."
 unzip -o "$ZIPFILE" -x 'META-INF/*' -d $MODPATH
 
