@@ -45,4 +45,6 @@ libsupernight_wrapper_v3.camera.samsung.so
 libAiSolution_wrapper_v1.camera.samsung.so
 libBright_core.camera.samsung.so
 libRemasterEngine.camera.samsung.so
-
+libtensorflowlite_c.camera.samsung.so
+libmidas_core.camera.samsung.so
+libmidas_DNNInterface.camera.samsung.so
