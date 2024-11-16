@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/github/v/release/Fede2782/oneCompleter?style=flat"/>)
 ![Size](https://img.shields.io/github/repo-size/Fede2782/oneCompleter?style=flat"/>)
-![Commit](https://img.shields.io/github/last-commit/Fede2782/oneCompleter/master?style=flat-square"/>)
+![Commit](https://img.shields.io/github/last-commit/Fede2782/oneCompleter/sep-15.x?style=flat-square"/>)
 
 Add missing One UI features to different devices and much more...
 
