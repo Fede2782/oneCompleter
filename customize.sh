@@ -126,8 +126,13 @@ fi
 if [[ "$(getprop ro.product.product.name)" == "a34xxx" || "$(getprop ro.product.product.name)" == "a54x"* ]]; then
     ui_print "- Using Samsung Galaxy A34 5G or A54 5G"
     ui_print "- Setting up 1080x2340 2024-style boot animation"
-    mkdir "$MODPATH/system/media"
+    mkdir -p "$MODPATH/system/media"
     tar xvf "$MODPATH/resources/bootanim-1080x2340.tar" -C "$MODPATH/system/media/"
+elif [[ "$(getprop ro.product.product.name)" == "a33x"* || "$(getprop ro.product.product.name)" == "a53x"* ]]; then
+    ui_print "- Using Samsung Galaxy A33 5G or A53 5G"
+    ui_print "- Setting up 1080x2400 2024-style boot animation"
+    mkdir -p "$MODPATH/system/media"
+    tar xvf "$MODPATH/resources/bootanim-1080x2400.tar" -C "$MODPATH/system/media/"
 fi
 rm $MODPATH/sff.sh
 

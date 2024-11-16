@@ -37,7 +37,7 @@ This module installs some big apps and libs. I suggest you use Galaxy App Booste
 - ✅️ 2024-style bootanimation*¹
 - ✅️ Wireless DeX*⁴
 
-*¹ Currently only A34 and A54 are supported
+*¹ Currently only A34, A54, A33, A53 are supported
 *⁴ Requires a proper kernel and system support. 
 
 ## Configuration
