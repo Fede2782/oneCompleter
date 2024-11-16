@@ -33,6 +33,7 @@ This module installs some big apps and libs. I suggest you use Galaxy App Booste
 - ✅️ Screen Curtain
 - ✅️ OCR in Samsung apps
 - ✅️ Voice Recoder Transcription and Interview mode
+- ✅️ Google's Circle to Search
 - ✅️ Wireless DeX*⁴
 
 *⁴ Requires a proper kernel and system support. 
