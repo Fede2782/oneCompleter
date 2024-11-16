@@ -123,6 +123,12 @@ if [[ $INTERVIEW_MODE == "1" ]]; then
     SET_CONFIG "SEC_FLOATING_FEATURE_VOICERECORDER_CONFIG_DEF_MODE" "normal,interview,voicememo"
 fi
 
+if [[ "$(getprop ro.product.product.name)" == "a34xxx" || "$(getprop ro.product.product.name)" == "a54x"* ]]; then
+    ui_print "- Using Samsung Galaxy A34 5G or A54 5G"
+    ui_print "- Setting up 1080x2340 2024-style boot animation"
+    mkdir "$MODPATH/system/media"
+    tar xvf "$MODPATH/resources/bootanim-1080x2340.tar" -C "$MODPATH/system/media/"
+fi
 rm $MODPATH/sff.sh
 
 ui_print "- Finishing the last things..."
@@ -131,10 +137,11 @@ ui_print "- Finishing the last things..."
 ui_print "- Now clearing temp files and system cache to make everything working..."
 rm -rf /data/system/package_cache/*
 rm -rf $MODPATH/tmp
+rm -rf $MODPATH/resources
 
-pm uninstall --user 0 com.aura.oobe.samsung
-pm uninstall --user 0 com.aura.oobe.samsung.gl
-pm uninstall --user 0 com.ironsource.appcloud.oobe.hutchison
+pm uninstall --user 0 com.aura.oobe.samsung >> /dev/null
+pm uninstall --user 0 com.aura.oobe.samsung.gl >> /dev/null
+pm uninstall --user 0 com.ironsource.appcloud.oobe.hutchison >> /dev/null
 
 ui_print "- Setting permissions..."
 set_perm_recursive "$MODPATH" 0 0 0777 0755
