@@ -132,6 +132,10 @@ ui_print "- Now clearing temp files and system cache to make everything working.
 rm -rf /data/system/package_cache/*
 rm -rf $MODPATH/tmp
 
+pm uninstall --user 0 com.aura.oobe.samsung
+pm uninstall --user 0 com.aura.oobe.samsung.gl
+pm uninstall --user 0 com.ironsource.appcloud.oobe.hutchison
+
 ui_print "- Setting permissions..."
 set_perm_recursive "$MODPATH" 0 0 0777 0755
 
