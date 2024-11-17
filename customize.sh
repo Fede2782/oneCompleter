@@ -134,6 +134,19 @@ elif [[ "$(getprop ro.product.product.name)" == "a33x"* || "$(getprop ro.product
     mkdir -p "$MODPATH/system/media"
     tar xvf "$MODPATH/resources/bootanim-1080x2400.tar" -C "$MODPATH/system/media/"
 fi
+
+ui_print "- Enabling Camera Assistant"
+mkdir -p $MODPATH/system/cameradata
+cp /system/cameradata/camera-feature.xml "$MODPATH/system/cameradata/camera-feature.xml"
+if grep -q 'CAMERA_ASSISTANT' "$MODPATH/system/cameradata/camera-feature.xml"; then
+    ui_print "- - Camera Assistant configuration in camera-feature.xml already present."
+    ui_print "- - This means you do not need this feature enabled by oneCompleter or your setup is broken or modifed by other modules."
+else
+    sed -i '/<\/resources>/d' "$MODPATH/system/cameradata/camera-feature.xml"
+    echo "    <local name=\"SUPPORT_CAMERA_ASSISTANT\" value=\"true\"/>" >> "$MODPATH/system/cameradata/camera-feature.xml"
+    echo "</resources>" >> "$MODPATH/system/cameradata/camera-feature.xml"
+fi
+
 rm $MODPATH/sff.sh
 
 ui_print "- Finishing the last things..."
