@@ -156,6 +156,12 @@ elif [[ $FORCE_BATTERY_HEALTH == "true" ]]; then
     SET_CONFIG "SEC_FLOATING_FEATURE_BATTERY_SUPPORT_BSOH_SETTINGS" "TRUE"
 fi
 
+if [[ "$(getprop ro.product.product.name)" == "a34xxx" ]]; then
+    ui_print "- Enabling OCR v2..."
+    tar xvzf "$MODPATH/resources/ocr-mssi.tar.gz" -C "$MODPATH/system/"
+    SET_CONFIG "SEC_FLOATING_FEATURE_CAMERA_CONFIG_STRIDE_OCR_VERSION" "V2"
+fi
+
 rm $MODPATH/sff.sh
 
 ui_print "- Finishing the last things..."
@@ -179,3 +185,4 @@ ui_print ""
 if [[ $KSU == "true" ]]; then
   ui_print "- Make sure that modules umount feature is disabled"
 fi
+
