@@ -38,6 +38,7 @@ This module installs some big apps and libs. I suggest you use Galaxy App Booste
 - ✅️ Multi User
 - ✅️ 2024-style bootanimation*¹
 - ✅️ Flagship Edge Lighting effect*²
+- ✅️ AOD-Lockscreen clock transition*²
 - ✅️ Wireless DeX*⁴
 
 *¹ Currently only A34, A54, A33 and A53 are supported.

@@ -164,6 +164,10 @@ if [[ "$(getprop ro.product.product.name)" == "a34x"* ]]; then
    ui_print "- Enabling high-end Edge Lighting effect..."
    echo "ro.factory.model=SM-G998B" >> "$MODPATH/system.prop"
    SET_CONFIG "SEC_FLOATING_FEATURE_SYSTEMUI_CONFIG_EDGELIGHTING_FRAME_EFFECT" "frame_effect"
+
+   ui_print "- Enabling AOD-Lockscreen clock transition..."
+   tar xvzf "$MODPATH/resources/BiometricSettings-s23fe.tar.gz" -C "$MODPATH/system/"
+   SET_CONFIG "SEC_FLOATING_FEATURE_FRAMEWORK_CONFIG_AOD_ITEM" "aodversion=7,clocktransition"
 fi
 
 rm $MODPATH/sff.sh
