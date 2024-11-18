@@ -17,14 +17,14 @@ You can flash this Magisk module at your own risk. I am not responsible for lost
 ## Credits
 These amazing features were created by Samsung. None of this would have been possible if Samsung hadn't created these features.
 
-Pixelify for the Zygisk spoofing implementation. BlackMesa123 for floating feature script.
+Pixelify for the Zygisk spoofing implementation. [@salvogiangri](https://github.com/salvogiangri) for floating feature script and some other features.
 
 ## 💡Little tip
 
 This module installs some big apps and libs. I suggest you use Galaxy App Booster (Samsung official app of Good Guardians suite) after every big module update, so the tablet will not slow down. A "wipe cache" or "Repair apps" in Recovery may be useful in some cases. Moreover, make sure all apps are up-to-date before/after installing this module (Play Store and Galaxy Store).
 
 ## Features Now:
-- ✅️ Smart Suggestions Widget (thanks to BlackMesa123, only in One UI 6.1.1 and later)
+- ✅️ Smart Suggestions Widget (thanks to @salvogiangri)
 - ✅️ Camera Privacy toggle 
 - ✅️ High End animations in stock launcher
 - ✅️ Extra Dim
@@ -38,14 +38,15 @@ This module installs some big apps and libs. I suggest you use Galaxy App Booste
 - ✅️ Multi User
 - ✅️ 2024-style bootanimation*¹
 - ✅️ Flagship Edge Lighting effect*²
-- ✅️ AOD-Lockscreen clock transition*²
+- ✅️ AOD-Lockscreen clock transition*³
 - ✅️ Wireless DeX*⁴
 
 *¹ Currently only A34, A54, A33 and A53 are supported.
 *² Currently only A34 is supported.
+*³ Currently only A34, A54, A33, A53, A35, A55 are supported.
 *⁴ Requires a proper kernel and system support. 
 
-## Configuration
+## Configuration (beta)
 You can configure the first installation by editing the config.sh file inside the module. 
 
 ## ⚠️ Uninstall/Disable and OS updates
