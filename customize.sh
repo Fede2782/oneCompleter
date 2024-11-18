@@ -124,7 +124,7 @@ if [[ $INTERVIEW_MODE == "1" ]]; then
     SET_CONFIG "SEC_FLOATING_FEATURE_VOICERECORDER_CONFIG_DEF_MODE" "normal,interview,voicememo"
 fi
 
-if [[ "$(getprop ro.product.product.name)" == "a34xxx" || "$(getprop ro.product.product.name)" == "a54x"* ]]; then
+if [[ "$(getprop ro.product.product.name)" == "a34x"* || "$(getprop ro.product.product.name)" == "a54x"* ]]; then
     ui_print "- Using Samsung Galaxy A34 5G or A54 5G"
     ui_print "- Setting up 1080x2340 2024-style boot animation"
     mkdir -p "$MODPATH/system/media"
@@ -156,10 +156,14 @@ elif [[ $FORCE_BATTERY_HEALTH == "true" ]]; then
     SET_CONFIG "SEC_FLOATING_FEATURE_BATTERY_SUPPORT_BSOH_SETTINGS" "TRUE"
 fi
 
-if [[ "$(getprop ro.product.product.name)" == "a34xxx" ]]; then
+if [[ "$(getprop ro.product.product.name)" == "a34x"* ]]; then
     ui_print "- Enabling OCR v2..."
     tar xvzf "$MODPATH/resources/ocr-mssi.tar.gz" -C "$MODPATH/system/"
     SET_CONFIG "SEC_FLOATING_FEATURE_CAMERA_CONFIG_STRIDE_OCR_VERSION" "V2"
+
+   ui_print "- Enabling high-end Edge Lighting effect..."
+   echo "ro.factory.model=SM-G998B" >> "$MODPATH/system.prop"
+   SET_CONFIG "SEC_FLOATING_FEATURE_SYSTEMUI_CONFIG_EDGELIGHTING_FRAME_EFFECT" "frame_effect"
 fi
 
 rm $MODPATH/sff.sh

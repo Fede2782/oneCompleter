@@ -36,9 +36,11 @@ This module installs some big apps and libs. I suggest you use Galaxy App Booste
 - ✅️ Google's Circle to Search
 - ✅️ Camera Assistant
 - ✅️ 2024-style bootanimation*¹
+- ✅️ Flagship Edge Lighting effect*²
 - ✅️ Wireless DeX*⁴
 
-*¹ Currently only A34 and A54 are supported.
+*¹ Currently only A34, A54, A33 and A53 are supported.
+*² Currently only A34 is supported.
 *⁴ Requires a proper kernel and system support. 
 
 ## Configuration
