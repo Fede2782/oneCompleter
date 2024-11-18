@@ -35,6 +35,7 @@ This module installs some big apps and libs. I suggest you use Galaxy App Booste
 - ✅️ Voice Recoder Transcription and Interview mode
 - ✅️ Google's Circle to Search
 - ✅️ Camera Assistant
+- ✅️ Multi User
 - ✅️ 2024-style bootanimation*¹
 - ✅️ Flagship Edge Lighting effect*²
 - ✅️ Wireless DeX*⁴

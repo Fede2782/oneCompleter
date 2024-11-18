@@ -1,7 +1,7 @@
 id=onecompleter
 name=OneCompleter 2
-version=v1.0.0-b9
-versionCode=10000009
+version=v1.0.0-b11
+versionCode=10000011
 author=Fede2782
 description=Enable missing features on One UI 6.1 and 6.1.1 devices
 updateJson=https://raw.githubusercontent.com/Fede2782/oneCompleter/stable/update.json
