@@ -4,5 +4,5 @@ version=v1.0.0
 versionCode=10000013
 author=Fede2782
 description=Enable missing features on One UI 6.1 and 6.1.1 devices
-updateJson=https://raw.githubusercontent.com/Fede2782/oneCompleter/stable/update.json
+updateJson=https://github.com/Fede2782/oneCompleter/raw/refs/heads/sep-15.x/update.json
 
