@@ -136,7 +136,7 @@ elif [[ "$(getprop ro.product.product.name)" == "a33x"* || "$(getprop ro.product
     tar xvf "$MODPATH/resources/bootanim-1080x2400.tar" -C "$MODPATH/system/media/"
 fi
 
-if [[ "$(getprop ro.product.product.name)" == "a35x"* || "$(getprop ro.product.product.name)" == "a55x"* || "$(getprop ro.product.product.name)" == "a33x"* || "$(getprop ro.product.product.name)" == "a53x"* || "$(getprop ro.product.product.name)" == "a34x"* || "$(getprop ro.product.product.name)" == "a54x"* ]]; then
+if [[ "$(getprop ro.product.product.name)" == "a35x"* || "$(getprop ro.product.product.name)" == "a55x"* || "$(getprop ro.product.product.name)" == "a53x"* || "$(getprop ro.product.product.name)" == "a34x"* || "$(getprop ro.product.product.name)" == "a54x"* ]]; then
    ui_print "- Enabling AOD-Lockscreen clock transition..."
    tar xvzf "$MODPATH/resources/BiometricSettings-s23fe.tar.gz" -C "$MODPATH/system/"
    SET_CONFIG "SEC_FLOATING_FEATURE_FRAMEWORK_CONFIG_AOD_ITEM" "aodversion=7,clocktransition"
