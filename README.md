@@ -38,6 +38,7 @@ This module installs some big apps and libs. I suggest you use Galaxy App Booste
 - ✅️ Multi User
 - ✅️ 2024-style bootanimation*¹
 - ✅️ Flagship Edge Lighting effect*²
+- ✅️ Better Document Scan in Camera (Shadow Eraser and assisted Manual Crop)*²
 - ✅️ AOD-Lockscreen clock transition*³
 - ✅️ Wireless DeX*⁴
 

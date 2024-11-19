@@ -167,9 +167,32 @@ if [[ "$(getprop ro.product.product.name)" == "a34x"* ]]; then
     tar xvzf "$MODPATH/resources/ocr-mssi.tar.gz" -C "$MODPATH/system/"
     SET_CONFIG "SEC_FLOATING_FEATURE_CAMERA_CONFIG_STRIDE_OCR_VERSION" "V2"
 
-   ui_print "- Enabling high-end Edge Lighting effect..."
-   echo "ro.factory.model=SM-G998B" >> "$MODPATH/system.prop"
-   SET_CONFIG "SEC_FLOATING_FEATURE_SYSTEMUI_CONFIG_EDGELIGHTING_FRAME_EFFECT" "frame_effect"
+    ui_print "- Enabling high-end Edge Lighting effect..."
+    echo "ro.factory.model=SM-G998B" >> "$MODPATH/system.prop"
+    SET_CONFIG "SEC_FLOATING_FEATURE_SYSTEMUI_CONFIG_EDGELIGHTING_FRAME_EFFECT" "frame_effect"
+
+    ui_print "- Enabling better Document Scan..."
+    SET_CONFIG "SEC_FLOATING_FEATURE_CAMERA_DOCUMENTSCAN_SOLUTIONS" "CV_DEWARPING,SHADOW_REMOVAL"
+    tar xvzf "$MODPATH/resources/camera-mssi.tar.gz" -C "$MODPATH/system/"
+    cp /system/etc/public.libraries-camera.samsung.txt "$MODPATH/system/etc/public.libraries-camera.samsung.txt"
+    if ! grep -q 'libLttEngine.camera.samsung.so' "$MODPATH/system/etc/public.libraries-camera.samsung.txt"; then
+      echo "libLttEngine.camera.samsung.so" >> "$MODPATH/system/etc/public.libraries-camera.samsung.txt"
+    fi
+    if ! grep -q 'libHIDTSnapJNI.camera.samsung.so' "$MODPATH/system/etc/public.libraries-camera.samsung.txt"; then
+      echo "libHIDTSnapJNI.camera.samsung.so" >> "$MODPATH/etc/public.libraries-camera.samsung.txt"
+    fi
+
+    if ! grep -q 'SUPPORT_SMART_SCAN_MANUAL_CROP' "$MODPATH/system/cameradata/camera-feature.xml"; then
+        sed -i '/<\/resources>/d' "$MODPATH/system/cameradata/camera-feature.xml"
+        echo "    <local name=\"SUPPORT_SMART_SCAN_MANUAL_CROP\" value=\"true\"/>" >> "$MODPATH/system/cameradata/camera-feature.xml"
+        echo "</resources>" >> "$MODPATH/system/cameradata/camera-feature.xml"
+    fi
+
+    if ! grep -q 'SUPPORT_ADDITIONAL_SCENE_DOCUMENT_SCAN' "$MODPATH/system/cameradata/camera-feature.xml"; then
+        sed -i '/<\/resources>/d' "$MODPATH/system/cameradata/camera-feature.xml"
+        echo "    <local name=\"SUPPORT_ADDITIONAL_SCENE_DOCUMENT_SCAN\" value=\"true\"/>" >> "$MODPATH/system/cameradata/camera-feature.xml"
+        echo "</resources>" >> "$MODPATH/system/cameradata/camera-feature.xml"
+    fi
 fi
 
 ui_print "- Installing new Samsung Smart Suggestions..."
