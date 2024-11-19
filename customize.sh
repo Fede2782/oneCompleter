@@ -157,7 +157,7 @@ fi
 if grep -q 'BATTERY_SUPPORT_BSOH_GALAXYDIAGNOSTICS' "$MODPATH/system/etc/floating_feature.xml"; then
     ui_print "- Enabling advanced battery stats as device is supported..."
     SET_CONFIG "SEC_FLOATING_FEATURE_BATTERY_SUPPORT_BSOH_SETTINGS" "TRUE"
-elif [[ $FORCE_BATTERY_HEALTH == "true" ]]; then
+elif [[ $FORCE_BATTERY_HEALTH == "1" ]]; then
     ui_print "- Enabling advanced battery stats..."
     SET_CONFIG "SEC_FLOATING_FEATURE_BATTERY_SUPPORT_BSOH_SETTINGS" "TRUE"
 fi
