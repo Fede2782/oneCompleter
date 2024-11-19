@@ -2,3 +2,4 @@ ro.surface_flinger.protected_contents=true
 ro.com.google.cdb.spa1=bsxasm1
 fw.show_multiuserui=1
 fw.max_users=8
+ril.support.dynamic_imei=true
