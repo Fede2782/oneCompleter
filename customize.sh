@@ -112,7 +112,7 @@ mkdir $MODPATH/tmp
 mkdir -p $MODPATH/system/etc
 READ_AND_APPLY_CONFIGS
 
-if [[ $WIRELESS_DEX == "1" ]]; then
+if [[ "$(getprop ro.build.characteristics)" == "tablet" && grep -q 'sec_touchpad' /proc/bus/input/devices && grep -q 'SEC_FLOATING_FEATURE_COMMON_SUPPORT_KNOX_DESKTOP' /system/etc/floating_feature.xml ]]; then
     ui_print "- Enabling Wireless DeX"
     ui_print "- - This feature requires a kernel with DeX input driver"
     SET_CONFIG "SEC_FLOATING_FEATURE_COMMON_CONFIG_DEX_MODE" "standalone,wireless"
