@@ -112,10 +112,14 @@ mkdir $MODPATH/tmp
 mkdir -p $MODPATH/system/etc
 READ_AND_APPLY_CONFIGS
 
-if [[ $WIRELESS_DEX == "1" ]]; then
-    ui_print "- Enabling Wireless DeX"
-    ui_print "- - This feature requires a kernel with DeX input driver"
-    SET_CONFIG "SEC_FLOATING_FEATURE_COMMON_CONFIG_DEX_MODE" "standalone,wireless"
+if grep -q 'sec_touchpad' /proc/bus/input/devices; then
+  if [[ "$(getprop ro.build.characteristics)" == "tablet" ]]; then
+    if grep -q 'SEC_FLOATING_FEATURE_COMMON_CONFIG_DEX_MODE>standalone,newdex' "/system/etc/floating_feature.xml"; then
+      ui_print "- Enabling Wireless DeX"
+      ui_print "- - This feature requires a kernel with DeX input driver"
+      SET_CONFIG "SEC_FLOATING_FEATURE_COMMON_CONFIG_DEX_MODE" "standalone,newdex,wireless"
+    fi
+  fi
 fi
 
 if [[ $INTERVIEW_MODE == "1" ]]; then
@@ -197,6 +201,14 @@ fi
 
 ui_print "- Installing new Samsung Smart Suggestions..."
 tar xvzf "$MODPATH/resources/SamsungSmartSuggestions-611.tar.gz" -C "$MODPATH/system/"
+
+if grep -q 'SEC_FLOATING_FEATURE_AUDIO_CONFIG_EFFECTS_VIDEOCALL>None' "/system/etc/floating_feature.xml"; then
+  if grep -r -q 'l_call_nc_booster_enable' "/vendor"; then
+    if grep -r -q 'l_mic_input_control_mode_2mic' "/vendor"; then
+      SET_CONFIG "SEC_FLOATING_FEATURE_AUDIO_CONFIG_EFFECTS_VIDEOCALL" "2MIC"
+    fi
+  fi
+fi
 
 rm $MODPATH/sff.sh
 

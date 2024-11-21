@@ -1,11 +1,5 @@
 # Interview mode in Voice Recorder
 INTERVIEW_MODE=0
 
-# Requires system and kernel support
-WIRELESS_DEX=0
-
-# Camera assistant
-CAMERA_ASSISTANT=1
-
 # Force battery health
 FORCE_BATTERY_HEALTH=1

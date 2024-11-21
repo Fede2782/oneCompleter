@@ -36,6 +36,7 @@ This module installs some big apps and libs. I suggest you use Galaxy App Booste
 - ✅️ Google's Circle to Search
 - ✅️ Camera Assistant
 - ✅️ Multi User
+- ✅️ Voice Focus*⁴
 - ✅️ 2024-style About Phone page
 - ✅️ 2024-style bootanimation*¹
 - ✅️ Flagship Edge Lighting effect*²
