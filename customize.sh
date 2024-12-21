@@ -222,6 +222,11 @@ rm -rf $MODPATH/resources
 pm uninstall --user 0 com.aura.oobe.samsung >> /dev/null
 pm uninstall --user 0 com.aura.oobe.samsung.gl >> /dev/null
 pm uninstall --user 0 com.ironsource.appcloud.oobe.hutchison >> /dev/null
+if [[ ! -e /data/local/tmp/setup_completed ]]; then
+  pm uninstall com.samsung.android.smartsuggestions >> /dev/null
+  pm uninstall --user 0 com.samsung.android.smartsuggestions >> /dev/null
+  touch /data/local/tmp/first_run
+fi
 
 ui_print "- Setting permissions..."
 set_perm_recursive "$MODPATH" 0 0 0777 0755
